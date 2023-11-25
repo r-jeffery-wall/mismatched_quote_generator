@@ -29,3 +29,20 @@ const quoteAuthor = [
     "Rene Descartes",
     "Winston Churchill."
 ];
+
+const randNumber = max => Math.floor(Math.random() * max); // Quick helper function for getting a random number within a range.
+
+const buildMessage = () => {
+    // Random parts of quotes are selected.
+    const part1 = quotePart1[randNumber(quotePart1.length)];
+    const part2 = quotePart2[randNumber(quotePart2.length)];
+    const author = quoteAuthor[randNumber(quoteAuthor.length)];
+    
+    const formattedString = `
+    ${part1}${part2}
+    ---${author}---
+    `;
+    return formattedString;
+}
+
+console.log(buildMessage());
